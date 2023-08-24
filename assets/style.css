@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color: rgba(192, 165, 218, 0.884);
+    height: 7vh;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    border-radius: 10px;
+}
+nav ul{
+    list-style-type: none;
+    font-family: 'Lobster', cursive;
+}
+
+.gameContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    font-family: 'Permanent Marker', cursive;
+    position: relative;
+}
+
+.box{
+    border: 2px solid black;
+    font-size: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+.box:hover{
+    background-color: rgba(207, 175, 223, 0.918);
+    transition: ease-in-out 500ms;
+    border-radius: 2vh;
+}
+
+.info{
+    font-size: 1.5rem;
+    padding: 10px 10px;
+}
+
+.gameInfo{
+    margin: 0vh 2vw;
+    padding: 0vh 1vw;
+}
+
+.gameInfo h1{
+    font-family: 'Lobster', cursive;
+    font-size: 2.5rem;
+
+}
+
+.imgbox img{
+    width: 0;
+    transition: 1s ease-in-out ;
+}
+
+#reset{
+    color: rgba(162, 63, 211, 0.863);
+    color: black;
+    border-radius: 2px solid black;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.br-0{
+    border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
+.line{
+    background-color: black;
+    height: 0.5rem;
+    width: 0;
+    position: absolute;
+    background-color: #000000;
+    transition: 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+    }
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}

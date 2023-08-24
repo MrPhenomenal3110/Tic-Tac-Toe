@@ -1,7 +1,7 @@
 console.log("Welcome to MyTicTacToe")
-let music =  new Audio("game-bgm.mp3");
-let audioturn = new Audio("clicksound.wav");
-let gameover = new Audio("gameover.wav");
+let music =  new Audio("/assets/game-bgm.mp3");
+let audioturn = new Audio("/assets/clicksound.wav");
+let gameover = new Audio("/assets/gameover.wav");
 let turn = "X";
 let isgameover = false;
 //Function to Change The Turn
@@ -39,7 +39,7 @@ const checkWin = ()=>{
 }
 
 //Game Logic
-music.play('./game-bgm.mp3');
+music.play('/assets/game-bgm');
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes). forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
@@ -61,7 +61,7 @@ Array.from(boxes). forEach(element =>{
 //Add onclick lick listener to Reset Button
 
 reset.addEventListener('click', ()=>{
-    music.play('./game-bgm.mp3');
+    music.play();
     let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element => {
         element.innerText = ""
