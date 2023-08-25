@@ -48,9 +48,8 @@ Array.from(boxes). forEach(element =>{
             boxtext.innerText = turn;
             audioturn.play();
             turn = changeTurn();
-            
-            checkWin();
             document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+            checkWin();
 
         }
 
@@ -71,4 +70,5 @@ reset.addEventListener('click', ()=>{
     document.querySelector(".line").style.width = "0vw";
     document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0vh";
+    
 })
