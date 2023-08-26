@@ -101,6 +101,59 @@ nav ul{
     background-color: #000000;
     transition: 1s ease-in-out;
 }
+.music-control{
+    margin-top: 10px;
+}
+.music-control p{
+    font-family: sans-serif;
+}
+label{
+    font-family: sans-serif;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 70px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+    top: -10px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #32ad16;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 5px;
+}
+
 
 @media screen and (max-width: 950px)
 {

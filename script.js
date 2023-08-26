@@ -1,5 +1,9 @@
 console.log("Welcome to MyTicTacToe")
-let music =  new Audio("./assets/game-bgm.mp3");
+
+const toggleSwitch = document.getElementById("switch");
+
+
+const bgMusic = new Audio("./assets/game-bgm.mp3");
 let audioturn = new Audio("./assets/clicksound.wav");
 let gameover = new Audio("./assets/gameover.wav");
 let turn = "X";
@@ -27,7 +31,7 @@ const checkWin = ()=>{
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
-            music.pause();
+            
             gameover.play();
             isgameover = true;
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "20vh";
@@ -39,7 +43,7 @@ const checkWin = ()=>{
 }
 
 //Game Logic
-music.play('./assets/game-bgm');
+
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes). forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
@@ -60,7 +64,7 @@ Array.from(boxes). forEach(element =>{
 //Add onclick lick listener to Reset Button
 
 reset.addEventListener('click', ()=>{
-    music.play();
+    bgMusic.play();
     let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element => {
         element.innerText = ""
@@ -72,3 +76,15 @@ reset.addEventListener('click', ()=>{
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0vh";
     
 })
+
+
+function handleBackgroundMusic(){
+    
+    const toggleState = toggleSwitch.checked;
+    if (!toggleState){
+        bgMusic.pause();}
+
+    else{bgMusic.play();}
+    
+}
+toggleSwitch.addEventListener("click", handleBackgroundMusic);
