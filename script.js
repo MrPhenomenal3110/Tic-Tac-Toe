@@ -64,7 +64,6 @@ Array.from(boxes). forEach(element =>{
 //Add onclick lick listener to Reset Button
 
 reset.addEventListener('click', ()=>{
-    bgMusic.play();
     let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element => {
         element.innerText = ""
@@ -79,12 +78,7 @@ reset.addEventListener('click', ()=>{
 
 
 function handleBackgroundMusic(){
-    
     const toggleState = toggleSwitch.checked;
-    if (!toggleState){
-        bgMusic.pause();}
-
-    else{bgMusic.play();}
-    
+    toggleState ? bgMusic.play() : bgMusic.pause();
 }
 toggleSwitch.addEventListener("click", handleBackgroundMusic);
